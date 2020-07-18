@@ -1,0 +1,67 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+/* 
+设置body
+*/
+body{
+   background: repeat-x url(../../img/polo360.png);
+}
+/* 设置header */
+.header{
+   width: 940px;
+   margin: 0 auto;
+   /* background-color: #bbffaa; */
+   margin-top: 30px;
+   padding-bottom: 40px;
+}
+/*设置logo 
+ */
+ .logo{
+    margin-left: 15px;
+ }
+ .nav{
+    float: right;
+    list-style: none;
+    margin-top: 5px;
+ }
+ .nav li{
+    float: left;
+   padding: 0 10px 8px 10px;
+   border-left: dotted #d6d6d6 1px;
+ }
+ .nav a{
+    color: #666666;
+    text-decoration: none;
+    font: bold 14px  Georgia;
+ }
+ .nav a:hover{
+    color: rgba(63, 63, 63, 0.534);
+    text-decoration: underline;
+ }
+ /* 
+ 在chrome浏览器中字体最小支持到12px
+ */
+ .nav p{
+    color: #b7b7b7;
+    font: 11px tahoma;
+ }
+ .banner{
+    margin: 0 auto;
+    width: 658px;
+    box-shadow: 1px 1px 50px #888888;
+ }
+ .pointDiv a{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background:url(../../img/pointer.png) no-repeat;
+ }
+ 
+.pointDiv a:hover,
+.pointDiv .active,
+.pointDiv a:active
+ {
+    background: no-repeat url(../../img/pointer-bg.png);
+ }

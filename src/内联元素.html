@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>内联元素</title>
+        <style type="text/css">
+            span{
+                background-color: #bbffaa;
+            }
+            .box1{
+                background-color: red;
+                width: 200px;
+                height: 200px;
+
+            }
+            .s1{
+                /*内容区、边距区、边框、外边距 
+                
+                 */
+                 /* 内联元素不能设置width和height */
+                 /* width: 200px;
+                 height: 200px; */
+
+                /* 设置水平内边距 内联元素可以设置水平内边距*/
+                padding-left: 100px;
+                padding-right: 100px;
+
+                /* 设置垂直方向内边距,内联元素可以设置垂直方向内边距，但是不会影响页面的布局
+                */
+                /* padding-bottom: 100px; */
+
+                /* 为元素设置边框 内联元素可以设置边框，但是垂直的边框不会影响到页面的布局
+                
+                */
+                border: 5px blue solid;
+
+                /* 水平外边距 内联元素可以设置外边距，但是水平方向外边距不会重叠，会求和
+                */
+                margin: 100px;
+
+                /* 内联元素不支持垂直外边距 */
+            }
+            .s2{
+                margin-left: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <span class="s1">我是一个span</span>
+        <span class="s2">我是一个span</span>
+        <span>我是一个span</span>
+        <span>我是一个span</span>
+        <span>我是一个span</span>
+        
+        <div class="box1"></div>
+    </body>
+</html>

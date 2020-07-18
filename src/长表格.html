@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .T{
+                border: 1px solid black;
+                /* table和td本来有一个默认距离
+                    通过border-spacing属性可以设置这个距离
+                 */
+                border-spacing: 0;
+                margin: 50px auto;
+                width: 50%;
+                /* border-collapse可以用来设置表格的边框合并 */
+                border-collapse: collapse;
+            }
+            td,th{
+                border: 1px solid black;
+            }
+            tr:nth-child(even){
+                background-color: #bbffaa;
+            }
+            tr:hover{
+                background-color: #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+         <table class="T">
+             <!-- 
+                 有些情况下表格是非常长的，
+                    这时就需要分为三个部分，表头，表格的主体，表格底部
+                在HTML中为我们提供三个标签：
+                    thead   表头
+                    tbody   表格主体
+                    tfoot   表格底部
+
+                这三个标签的作用，就来区分表格的不同部分，他们都是table的子标签，都需要直接写到table中，都需要直接写到table中，
+                tr需要写在这些标签当中
+
+                thead中的内容，永远会显示在表格的头部
+                tbody中的内容，永远会显示在表格的中间
+                tfoot中的内容，永远会显示在表格的底部
+
+                如果表格中没有将写tbody，浏览器会自动添加tbody，并且会将所有的tr都放到tbody中，所以注意tr并不是table的子元素而是tbody的子元素
+                通过table>tr无法选中    需要通过tbody>tr来选中
+              -->
+             <tr>
+                 <th>日期</th>
+                 <th>收入</th>
+                 <th>支出</th>
+                 <th>合计</th>
+             </tr>
+             <tr>
+                <td><span class="s1">1</span></td>
+                <td><span class="s1">孙悟空</span></td>
+                <td><span class="s1">男</span></td>
+                <td><span class="s1">花果山</span></td>
+            </tr>
+         </table>
+    </body>
+</html>

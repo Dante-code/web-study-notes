@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>伪类选择器</title>
+    <style type="text/css">
+    /* 伪类选择器 
+    伪类专门用来表示元素的一种特殊的状态
+    比如：访问过的超链接，比如普通的超链接，比如获取焦点的文本框
+    当我们需要为处在这些特殊状态的元素设置样式时，就可以使用伪类
+    */
+    /* 
+    为没访问过的链接设置一个颜色
+    : link
+    表示普通的链接（没访问过的链接）
+     */
+     a:link {
+         color: red;
+     }
+     /* 为访问过的设置一个绿色
+    :visited
+    表示访问过的链接
+    浏览器是通过历史记录来判断一个链接是否访问过
+    由于涉及一些隐私问题，visited只能设置字体颜色
+     */
+     a:visited{
+         color: green;
+     }
+     /* 
+     :hover
+     表示表示鼠标移入时的状态
+      */
+     a:hover{
+        color:blue;
+     }
+     /* 
+     ：active表示的是超链接被点击的状态
+      */
+      a:active{
+        color: skyblue;
+      }
+      /* 
+      hover和active也可以为其他元素设置
+      但是IE6中不支持对超链接以外的设置hover和active
+       */
+    /* p:hover{
+        color: red;
+     }
+     p:active{
+        background-color:tan;
+     } */
+     /* 其他伪类
+     获取焦点           :focus
+     指定元素前         :before
+     指定元素后         :after
+     选中的元素         ::selection
+      */
+    input:focus{
+        background-color: chocolate;
+    }
+    /*为p标签选中的内容使用样式
+    可以使用:::selection 
+    火狐浏览器中要使用     ::-moz-selection
+     */
+     p::selection{
+         color: lightgreen;
+     }
+     
+     /* 给火狐用的 */
+     p::-moz-selection{
+         color: lightgreen;
+     }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">访问过的链接</a>
+    <a href="http://www.baidu12345.com">没有访问过的链接</a>
+    <p>this is a p </p>
+    <!-- 使用input可以创建文本输入框 -->
+    <input type="text" />
+</body>
+</html>

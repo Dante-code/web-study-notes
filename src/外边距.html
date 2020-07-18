@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>内边距</title>
+        <style type="text/css">
+            .box1{
+                width: 500px;
+                height: 500px;
+                background-color: #bbffaa;
+                border: 10px red solid;
+
+                /* 
+                    外边距指的是当前盒子与其他盒子之间的距离，它不会影响可见框的大小，而会影响盒子的位置
+                    盒子有四个方向的外边距：
+                    margin-top
+                    margin-left
+                    margin-right
+                    margin-bottom
+
+                    由于页面中的元素都是靠左靠上摆放的，所以注意当我们设置上和左外边距会导致盒子的自身位置发生改变
+                    注意可以用负值
+                 */
+                margin-top: 100px;
+                /* margin-left: 400px; */
+                margin-bottom: -200px;
+                /* 
+                    margin还可以设置auto，auto一般只设置给水平方向的margin
+                    如果只指定一边，左外边距或右外边距的margin为auto则会将外边距设置为最大值
+                    垂直方向外边距设置为auto，则外边距默认为0
+
+                    如果left和right同时设置为auto，则会将两侧的外边距设置为相同的值，就可以使元素自动在父元素中水平居中
+
+                外边距同样可以设置简写属性margin，可以同时设置四个方向的外边距
+                 */
+
+
+            }
+            .box2{
+                width: 100px;
+                height: 100px;
+                background-color: skyblue;
+
+            }
+        </style>
+    </head>
+    <body>
+       <div class="box1"></div>
+       <div class="box2"></div>
+    </body>
+</html>

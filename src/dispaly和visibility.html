@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>内边距</title>
+        <style type="text/css">
+            a{
+                text-decoration: none;
+                background-color: #bbffaa;
+                width: 500px;
+                height: 500px;
+                /* 
+                将内联元素变为块元素
+                通过display样式可以修改元素的类型
+                    可选值：
+                        inline：可以将一个元素作为内联元素显示
+                        block：可以将一个元素设置块元素显示
+                        inline-block 将一个元素转化为行内块元素
+                        none    不显示元素，并且元素不会在页面中继续占有位置
+                 */
+                 /* 使用display隐藏的元素不会在页面中显示并且不会占据位置
+                    而使用visibility隐藏的元素会占据位置
+                    visibility可选值：
+                        visibile  可见
+                        hidden    不可见但会占据位置
+                  */
+                display: block;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+       <a href="#">我是一个大大大的超链接</a>
+       <span>我是一个span</span>
+    </body>
+</html>

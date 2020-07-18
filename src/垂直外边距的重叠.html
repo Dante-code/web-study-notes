@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>垂直外边距的重叠</title>
+        <style type="text/css">
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bbffaa;
+            margin-bottom: 100px;
+        }
+        /* 垂直外边距的重叠
+            在网页中垂直方向的相邻边距会发生外边距的重叠
+                所谓的外边距重叠指兄弟元素之间的相邻外边距会取最大值而不是和
+         */
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+        }
+        /* 
+            如果父子元素的垂直外边距相邻了，则子元素的外边距会设置给父元素
+         */
+        .box3{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            /* border-top: 1px red solid; */
+            /* padding-top: 1px; */
+            padding-top:100px;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* 
+                为子元素设置一个上外边距，使子元素的位置下降
+             */
+             /* margin-top: 100px; */
+        }
+        </style>
+    </head>
+    <body>
+        <div class="box3">
+            <div class="box4"></div>
+        </div>
+        <div class="box1"></div>
+        <!-- a -->
+        <div class="box2"></div>
+    </body>
+</html>

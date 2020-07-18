@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <style type="text/css">
+        .box1{
+            width: 1000px;
+            height: 1000px;
+            background-image: url(1.jpg);
+            background-color: yellow;
+            /* 
+            使用backgroound-image来设置背景图片
+                -如果背景图片大于元素，默认会显示图片的左上角
+                -如果背景图片和元素一样大，则会将图片背景全部显示
+                -如果背景图片小于元素大小，则会默认将背景图片平铺以充满元素
+
+            可以同时为一个元素指定背景颜色和背景图片
+                这样背景颜色将会作为背景图片的底色
+                一般情况下设置完背景图片都会指定一个背景颜色
+
+            相对路径写在哪，就相对谁。css文件同理            
+             */
+             /* 
+             background-repeat用于设置背景图片的重复方式
+                可选值：
+                    repeat  默认值  背景图片会双方向重复（平铺）
+                    no-repeat   背景图片不会重复，有多大就显示多大
+                    repeat-x    背景图片沿水平方向显示
+                    repeat-y    背景图片沿垂直方向重复
+              */
+             background-repeat: repeat-y;
+             
+        }
+        /* .box2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color:green;
+        }
+        .box4{
+            width: 400px;
+            height: 400px;
+            background-color:blue;
+            position: relative;
+        } */
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box4">
+            <div class="box2"></div>
+        </div>
+        
+        <div class="box3"></div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>浮动</title>
+        <style type="text/css">
+        .son1{
+            width: 1000px;
+            height: 100px;
+            background-color: red;
+            /* 
+            块元素在文档流里默认垂直排列，如果希望块元素在页面中水平排列，可以使块元素脱离文档流
+            使用float来使元素浮动，从而脱离文档流
+                可选值：
+                    none    默认值  元素默认在文档流中排列
+                    left    元素会立即脱离文档流，向页面的左侧浮动
+                    right   元素会立即脱离文档流，向页面的右侧浮动
+
+            当为一个元素设置浮动以后(float属性使一个非none的值)
+            元素会立即脱离文档流， 它下边的元素会立即向上移动
+            元素浮动以后，会尽量向页面的左上或这是右上漂浮，直到遇到父元素的边框
+            直到遇到其他浮动元素
+
+            如果浮动元素上面是一个没有浮动的元素，则浮动元素不会超过块元素
+
+            浮动的元素不会超过他上边的兄弟元素，最多一边齐
+             */
+            float: left;
+
+        }
+        .son2{
+            width: 1000px;
+            height: 100px;
+            background-color: yellow;
+            float: left;
+        }
+        .son3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: right;
+
+        }
+        </style>
+
+    </head>
+    <body>
+        <div class="dad">
+            <div class="son1"></div>
+            
+            <div class="son2"></div>
+            <div class="son3"></div>
+     
+
+        </div>
+    </body>
+</html>

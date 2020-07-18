@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>内边距</title>
+        <style type="text/css">
+        .box1{
+            width: 100px;
+            height: 30px;
+            background-color: #bbffaa;
+        }
+        /* 
+        子元素默认是存在于父元素的内容区中，
+            理论上讲子元素的最大可以等于父元素内容区大小
+        如果子元素大小超过父元素的内容区，则超过的大小会在父元素以外的位置显示。超出父元素的内容，我们称为溢出内容
+        父元素默认是将溢出内容在父元素外边显示，
+        通过overflow可以设置父元素如何处理溢出内容
+            可选值：
+                visible 默认值 元素会在父元素以外的位置显示
+                hidden  溢出的内容，会被修建，
+                scroll  会为父元素添加滚动条，通过拖动滚动条来查看完整内容
+                    该属性不论内容是否溢出，都会添加水平和垂直双方向的滚动条
+                auto    会根据需求自动添加滚动条，需要水平就添加水平，需要垂直就添加垂直，都不需要就都不加
+         */
+        /* .box2{
+            width: 500px;
+            height: 500px;
+            background-color: #abcfab ;
+        } */
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: #ab3fab ;
+            overflow: auto;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- <div class="box2"></div> -->
+        <div class="box3">
+           <div class="box1"></div>
+        </div>
+       
+       
+    </body>
+</html>

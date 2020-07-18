@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>样式的继承</title>
+</head>
+<body>
+    <!-- 
+        像儿子可以继承父亲的遗产，在css中，祖先元素上的样式，也会被后代元素继承
+        利用继承，可以将一些基本的样式设置给祖先元素，这样所有的后代元素将会自动继承这些样式
+
+        但是并不是所有的样式都会被子元素继承，比如：背景相关的样式都不会被继承，边框相关的样式  定位相关的样式
+     -->
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+    <p style="color: red;">我是一个p标签
+        <br>
+        <span>i am a span in p </span>
+    </p>
+    <span>i am a span out of p </span>
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+</body>
+</html>

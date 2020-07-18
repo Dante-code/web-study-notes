@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>子元素选择器</title> 
+    <style type="text/css">
+    /* 
+    :first-child   可以选中第一个子元素
+    :last-child    可以选中最后一个子元素
+    :nth-child()   可以选中任意位置的子元素，该选择器后面可以指定一个参数，指定要选中的第几个元素
+    even    表示偶数位置元素
+    odd     表示奇数位置元素
+     */
+     body>p:first-child{
+         font-size: xx-large;
+     }
+    body>p:last-child{
+        background-color: red;
+    }
+    p:nth-child(even){
+        color: yellow;
+    }
+    /* 和 :first-child类似
+    :first-of-type  可以选中第一个
+    :last-of-type   可以选中最后一个
+    :nth-of-type()
+     */
+    </style>
+</head>
+<body>
+    <span> i am a span </span>
+    <p>我是一个p标签</p>
+    <div>
+        <p>我是一个p标签</p>
+        <p>我是一个p标签</p>
+        <p>我是一个p标签</p>
+    </div>
+    <p>我是一个p标签</p>
+    
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+    <p>我是一个p标签</p>
+</body>
+</html>

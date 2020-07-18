@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>盒子模型</title>
+        <style type="text/css">
+            .box1{
+                /* 
+                    使用width来设置盒子内容区的宽度
+                    使用height来设置盒子内容区的高度
+
+                    width和height只是设置盒子内容的大小，而不是盒子的整个大小
+
+                 */
+                width: 500px;
+                height: 500px;
+
+                /* 设置背景颜色 */
+                background-color: #bbffaa;
+
+                /* 
+                为元素设置边框
+                    要为一个元素设置边框必须指定三个样式
+                        border-width: 边框的宽度
+                        border-color: 边框的颜色
+                        border-style: 边框样式
+                 */
+                 /* border-width: 5px; */
+                 /* 使用border-width 可以分别指定四个边框的宽度 
+                 如果给border-width设定四个值，
+                    则四个值分别设置给  上  下  左  右，    按照顺时针的方向设置
+                如果指定三个值，
+                    则三个值会分别设置给    上  左右    下
+                如果指定两个值，
+                    则两个值分别设置给  上下    左右
+
+                如果指定一个值，则四边全都是该值
+                border-width: 20px 40px 30px 50px;
+
+                还有  border-right-color: ;
+                border-left-color: ;
+                border-top-color: ;
+                border-buttom-color: ;
+                 */
+                 border-width: 20px;
+                 /* 
+                    设置边框颜色
+                    和宽度一样
+                  */
+                 /* border-color: black; */
+                 border-color: lavenderblush blue red yellow;
+                 /* 
+                    设置边框样式
+                        可选值：
+                            none    默认值  没有边框
+                            solid   实线
+                            dotted  点状边框
+                            dashed  虚线
+                            double  双线
+                    规则和宽度一致
+                  */
+                 border-style: groove double dashed dotted;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+
+        </div>
+    </body>
+</html>

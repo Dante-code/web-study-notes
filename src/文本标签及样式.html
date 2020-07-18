@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <mata charset="utf-8"/>
+    <title>文本标签及样式</title>
+</head>
+<body>
+    <!-- em 和strong
+    这两个表示强调的内容，em主要表示语气上的强调,em在浏览器中默认使用斜体
+    strong表示强调的内容，比em更强烈，默认使用粗体
+     i标签中的内容会以斜体显示
+     b标签中的内容会议粗体显示
+
+     h5规定，对于不需要着重的内容而是单纯的加粗或者斜体，就可以使用b和i标签  
+    -->
+    <p>
+        i am a <b>superman</b> <br>
+        i am a <i>ice-cream</i>
+    </p>
+    <strong>warning neuclear weapons ready</strong>
+    <p>what a <em>day</em> </p>
+    <strong>today's dream, tommorrow comes ture</strong>
+
+    <!-- small标签中的内容会比他的父元素中的文字更小一些 
+    在h5中使用small标签来表示一些细则一类的内容，比如：合同中的小字，网站的版权声明都可以放到small
+    同样的有big但是没有语义
+    -->
+    <p>
+        i am the content in the p 
+        <small>i am the content in the small </small>
+    </p>
+    <!-- 网页中所有的加书名号的内容都可以使用cite标签，表示参考的内容 
+        比如歌名 书名  话剧名  电影名
+    -->
+    <p>
+        <cite>论语</cite> is my favorite book.
+    </p>
+    <!-- q标签表示一个短的引用（行内应用）
+        q标签引用的内容，浏览器会博人加引号
+
+        blockquote标签表示一个常引用（块级引用）
+        <p>
+        子曰：
+        <blockquote>
+            有朋自远方来，不亦乐乎？
+        </blockquote>
+    </p>                                      ——————这是错例
+    -->
+    <p>
+        子曰：<q>学而时习之，不亦说乎？</q>
+    </p>
+    <div>
+        子曰：
+        <blockquote>
+            有朋自远方来，不亦乐乎？
+        </blockquote>
+    </div>
+    <!--使用sup来设置上标 
+        sub用来表示下标
+    -->
+    <p>2<sup>2</sup> </p>
+    <p>赵薇<sup><a href="http://www.baidu.com">[1]</a></sup>
+        H<sub>2</sub>O
+    </p>
+    <!-- 使用del标签表示删除的内容 -->
+    <p>
+        <del>17.54</del>
+        <br>
+        12.34
+    </p>
+    <!-- ins表示一个插入的内容 -->
+    <p>
+        我们的老师真<ins>好</ins>啊
+    </p>
+
+    <!-- 需要在页面中直接编写一些代码 
+        pre是一个预格式标签，会将代码中的格式保存，不会忽略多个空格
+        code专门同来表示代码
+        我们一般结合使用pre和code来表示一段代码
+    -->
+    <pre>
+        <code>
+window.onload = function(){
+    alert("hello world")
+};
+        </code>
+    </pre>
+</body>
+</html>
