@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    $(() => {
+      const arr = {
+        'price':12,
+        'name':'cabqino',
+        'country':"china",
+        abc(){
+          alert('hello');
+        }
+      }
+      const a = [1,2,3,4,5,99,-100,2324,0]
+      // $.each(arr,(index,value) => {
+      //   console.log(index,value);
+        
+      // })
+      
+      /**
+       * 其他方法
+       * $.map()
+       * $.trim()剪去字符串左右两边的空格
+       * $.isWindow()判断是否为window对象
+       * $.isArray()
+       * $isFunction()
+       * 
+       * 注意jQuery是一个函数
+      */
+      console.log($.isFunction($));
+      
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

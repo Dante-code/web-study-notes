@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <cpn :recmsg="msg" :recage="age"></cpn>
+    <!-- <cpn2></cpn2> -->
+  </div>
+
+  <template id="cpn">
+    <div>
+      {{recmsg + recage}}
+      <h2>我是父组件标题</h2>
+      <p>我是父组件内容哈哈哈</p>
+      <cpn2></cpn2>
+    </div>
+  </template>
+  <template id="cpn2">
+    <div style="color: red;">
+      <h2>我是子组件标题</h2>
+      <p>我是子组件内容哈哈哈</p>
+    </div>
+  </template>
+  <script src="vue.js"></script>
+
+
+  <script>
+    // Vue.component('cpn2',{
+    //   template: '#cpn2'
+    // });
+
+
+    Vue.component('cpn',{
+      template: '#cpn',
+      // props: ['recmsg','recage']
+      // props:{
+      //   recmsg:String,
+      //   recage:Number
+      // }
+      props:{
+        recmsg:{
+          type:String,
+          default:'fuckyou',
+          required: true  //必传值
+        },
+        recage:{
+          type:Number,
+          default:10
+        }
+      }
+      ,
+      components:{
+        cpn2: {
+          template: '#cpn2'
+        }
+      }
+    });
+    let box = new Vue({
+      el: '#box',
+      data:{
+        msg:'hello,how are you',
+        age:18
+      },
+      components:{
+
+      }
+    })
+  </script>
+</body>
+</html>

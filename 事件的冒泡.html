@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 300px;
+            height: 300px;
+            background-color: #bbffaa;
+        }
+        #str{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /**
+             * 事件的冒泡(Bubble)
+             * 当后代元素的事件被触发时，其祖先元素的相同事件也会被触发
+             * 
+             * event.cancelBubble = true;即可取消冒泡
+            */
+            var box1 = document.getElementById('box1');
+            var str = document.getElementById('str');
+            var body = document.body;
+            box1.onclick = function(event){
+                event = event || window.event;
+                alert('我是div的单击响应函数');
+                event.cancelBubble = true;
+            }
+            str.onclick = function(event){
+                event = event || window.event;
+                alert('我是span的单击响应函数');
+                event.cancelBubble = true;
+            }
+            body.onclick = function(){
+                alert('我是body的单击响应函数');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        你好，我是小红<span id="str">我是在span中的一段文字</span>
+    </div>
+</body>
+</html>

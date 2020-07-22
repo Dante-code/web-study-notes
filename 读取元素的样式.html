@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+           /* width: 200px;  */
+           height: 200px;
+           background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <br>
+    <button id="btn">点我一下</button>
+
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            var box1 = document.querySelector('.box1');
+            /**
+            getComputedStyle()这个方法可以获取元素当前的样式，这个方法是window的方法可以直接使用
+            第一个参数——要获取的元素
+            第二个——可以传递一个伪元素，一般都传null
+
+            该方法会返回一个对象，对象里封装当前元素的样式
+            如果对象的样式没有设置，则会获取到真实的值，而不是默认值
+            如没有设置width时，则会返回一个宽度而不是auto
+
+            注意IE8不支持这个方法
+            */
+            alert(getComputedStyle(box1,null).width);
+        }
+    </script>
+</body>
+</html>

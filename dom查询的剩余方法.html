@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            /* border: 1px black solid; */
+            margin: 50px auto;
+            width: 800px;
+        }
+        .box1::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .inner{
+            height: 300px;
+            width: 120px;
+            border: 2px red solid;
+            float: left;
+            margin-left: 5px;
+            text-align: center;
+        }
+        #price{
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>商城</h1>
+    <div class="box1">
+        <h2>商品展示</h2>
+        <div id="outer">
+            <div id="phone" class="inner">手机</div>
+            <div id="com"  class="inner">电脑</div>
+            <div id="book" class="inner">书本</div>
+            <div id="car" class="inner">汽车</div>
+            <div id="tel" class="inner">电视</div>
+            <div id="desk" class="inner">桌子</div>
+            <span id="price">计算出来的金额是</span>
+            <button id="btn">结算</button>
+        </div>
+
+    </div>
+    <script>
+        const price = {
+            phone: 4000,
+            com:10000,
+            car:200000,
+            tel:6000,
+            desk:1000
+        }
+        var sumPrice = 0;
+        var inner = document.querySelectorAll('inner');
+        // console.log(inner[1].innerText);
+        var btn = document.getElementById('btn');
+        for(var i=0;i<inner.length;i++){
+            inner[i].onclick = function(){
+                inner[i].style.backgroundColor = 'green';
+            }
+        }
+        btn.onclick = function(){
+            
+        }
+    </script>
+</body>
+</html>

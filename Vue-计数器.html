@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">
+        <h1>点击次数: {{counter}}</h1>
+        <!-- <button v-on:click='counter++'>+</button>
+        <button v-on:click='counter>0?counter--:counter=0'>-</button> -->
+        <button v-on:click='incre'>+</button>
+        <button v-on:click='decre'>-</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        let box1 = new Vue({
+            el:'#box1',
+            data:{
+                counter:0
+            },
+            methods:{
+                incre(){
+                    this.counter++;
+                },
+                decre(){
+                    this.counter--;
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <div id="app">
+    <cpn :number1="num1" :number2="num2" @num1input="num1input" @num2input="num2input"></cpn>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <h2>{{dnumber1}}</h2>
+      <input type="text" @input="number1input">
+      <h2>{{dnumber2}}</h2>
+      <input type="text" @input="number2input">
+    </div>
+  </template>
+  <script src="vue.js"></script>
+  <script>
+    const cpn={
+      template: '#cpn',
+      props:{
+        number1:Number,
+        number2:Number
+      },
+      data(){
+        return{
+          dnumber1:this.number1,
+          dnumber2:this.number2
+        }
+        
+      },
+      methods:{
+        number1input(event){
+          this.$emit('num1input',event);
+          this.dnumber1 = event.target.value;
+          console.log('dnumber1 '+this.dnumber1);
+          
+        },
+        number2input(event){
+          this.$emit('num2input',event);
+          this.dnumber2 = event.target.value;
+          console.log('dnumber2 '+this.dnumber2);
+        }
+      }
+    }
+
+    const app = new Vue({
+      el: '#app',
+      data:{
+        num1:0,
+        num2:1
+      },
+      components:{
+        cpn
+      },
+      methods:{
+        num1input(event){
+          this.num1 = 1*event.target.value;
+          console.log('num1 '+this.num1);
+        },
+        num2input(event){
+          this.num2 = 1*event.target.value;
+          console.log('num2 '+this.num2);
+        }
+      }
+    })
+  </script>
+</body>
+</html>

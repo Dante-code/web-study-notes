@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+      width: 1800px;
+      height: 168px;
+      /* background-color: rgba(255, 0, 0, 0.5); */
+    }
+    div{
+      width: 600px;
+      height: 168px;
+      border: 1px solid black;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+    ul>li{
+      float: left;
+    }
+    img{
+      width: 300px;
+    }
+    .big{
+      width: 350px;
+      height: 200px;
+    }
+  </style>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      let offset = 0
+      let timer = setInterval(() => {
+        offset-=10;
+        $('ul').css('margin-left',offset);
+        if(offset<=-1200){
+          offset=0
+        }
+      }, 25);
+      function autoPlay(){
+        timer = setInterval(() => {
+          offset-=10;
+          $('ul').css('margin-left',offset);
+          if(offset<=-1200){
+            offset=0
+          }
+        }, 25);
+      }
+      $('li').hover(function(){
+        clearInterval(timer);
+        $(this).siblings().fadeTo(100,0.5)
+        
+      },function(){
+        autoPlay()
+        $(this).siblings().fadeTo(100,1)
+      })
+    })
+  </script>
+</head>
+<body>
+  <div>
+    <ul>
+      <li><img src="img/01.jpeg" alt=""></li>
+      <li><img src="img/02.jpeg" alt=""></li>
+      <li><img src="img/03.jpeg" alt=""></li>
+      <li><img src="img/04.jpeg" alt=""></li>
+      <li><img src="img/01.jpeg" alt=""></li>
+      <li><img src="img/02.jpeg" alt=""></li>
+    </ul>
+  </div>
+</body>
+</html>

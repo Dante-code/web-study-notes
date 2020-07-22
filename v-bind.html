@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1" :style="[baseStyle,addStyle]">
+        <span v-html="a"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var box1 = new Vue({
+            el:'#box1',
+            data:{
+                baseStyle:{
+                    backgroundColor: '#bfa',
+                    width: '100px',
+                    height:'200px'
+                },
+                addStyle:{
+                    border: '1px black solid'
+                },
+                a: '<a href="#">你好！</a>'
+            }
+           
+        })
+    </script>
+</body>
+</html>

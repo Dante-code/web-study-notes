@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <br>
+    <button id="btn01">点我以下</button>
+    <button id="btn02">读取样式</button>
+    <script type="text/javascript">
+        var btn01 = document.getElementById('btn01');
+        var btn02 = document.getElementById('btn02');
+        btn01.onclick = function(){
+            var box1 = document.getElementById('box1');
+            box1.style.width = '400px';
+            box1.style.height = '400px';
+            box1.style.backgroundColor = 'green';
+            /**
+             * 通过js修改元素的样式
+             * 语法：
+             *      元素.style.样式名  =  样式值
+             * 
+             * 注意:如果CSS的样式名中含有-,需要更改为驼峰命名法
+             * 
+             * 通过style属性设置的样式都是内联样式，而内联样式有较高的优先级，所以通过js修改的样式往往会立即显示
+             * 
+             * 但是如果在样式中写了!important,则此时样式会有最高的优先级，即使通过js也不能覆盖样式，这会导致js修改样式失效
+             * 所以尽量不要添加!important
+            */
+        }
+        btn02.onclick = function(){
+            var box1 = document.getElementById('box1');
+            alert(box1.style.width + box1.style.height + box1.style.backgroundColor);
+            /**
+             * 通过style属性读取和设置的都是内联样式，无法读取样式表中的样式
+            */
+        }
+    </script>
+</body>
+</html>

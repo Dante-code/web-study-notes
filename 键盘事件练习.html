@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: #bbffaa;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+            var dir,speed=10;
+            document.onkeydown = function(event){
+                dir = event.keyCode;
+                // clearInterval(timer);
+                // console.log(event.keyCode);
+            };
+            var timer = setInterval(function(){
+                switch(dir){
+                    case 37:    box1.style.left = box1.offsetLeft - speed + 'px';break;
+                    case 38:    box1.style.top = box1.offsetTop - speed + 'px';break;
+                    case 39:    box1.style.left = box1.offsetLeft + speed + 'px';break;
+                    case 40:    box1.style.top = box1.offsetTop + speed + 'px';break;
+                }
+            },30);
+            document.onkeyup = function(){
+                dir = 0;
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

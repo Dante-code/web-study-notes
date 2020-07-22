@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+    .nav>li{
+      line-height: 35px;
+      border-bottom: 1px solid black;
+    }
+    .nav{
+      width: 300px;
+      margin: 100px auto;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+    ul>li:last-child{
+      border-bottom: none;
+    }
+    .nav>li>span{
+      font-size: 15px;
+      font-weight: bolder;
+    }
+    .sub>li{
+      background-color: plum;
+      border-bottom: 1px solid white;
+    }
+    .sub{
+      display: none;
+    }
+    .sub>li:hover{
+      background-color: red;
+    }
+    .lalala{
+      width: 200px;
+      height: 200px;
+      position: relative;
+      background-color: #bbffaa;
+      animation: fly 2s ease-in-out 3s infinite;
+    }
+    @keyframes fly{
+      0%{
+        left: 30px;
+        top: 30px;
+      }
+      100%{
+        left: 130px;
+        top: 200px;
+      }
+    }
+  </style>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    $(() => {
+      $('.nav>li').click(function(){
+
+        let sub = $(this).children('.sub');
+        sub.slideDown(1000);
+        let otherSub = $(this).siblings().children();
+        otherSub.slideUp(1000);
+
+      })
+      $('.nav>li').children().click(function(){
+        return false;
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="lalala">
+
+  </div>
+  <div class="box">
+    <ul class="nav">
+      <li>一级菜单<span>hhhh</span>
+        <ul class="sub">
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+        </ul>
+      </li>
+      <li>一级菜单<span>hhhh</span>
+        <ul class="sub">
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+        </ul>
+      </li>
+      <li>一级菜单<span>></span>
+        <ul class="sub">
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+          <li>二级菜单<span>></span></li>
+        </ul>
+      </li>
+      <li>一级菜单<span>></span></li>
+      <li>一级菜单<span>></span></li>
+      <li>一级菜单<span>></span></li>
+      <li>一级菜单<span>></span></li>
+      <li>一级菜单<span>></span></li>
+      <li>一级菜单<span>></span></li>
+      <li>一级菜单<span>></span></li>
+    </ul>
+  </div>
+</body>
+</html>

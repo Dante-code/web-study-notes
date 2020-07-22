@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrap{
+      /* height: 600px; */
+      width: 80%;
+      border: 1px solid #cccccc;
+      margin: 20px auto;
+    }
+    .hd{
+      height: 5%;
+      background-color: red;
+      display: flex;
+    }
+    .bd{
+      height: 95%;
+      /* border: 1px solid green; */
+      display: flex;
+      flex-wrap: wrap-reverse;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      align-content: space-around;
+    }
+    .child{
+      margin: 5px;
+      height: 100px;
+      width: 100px;
+      background-color: skyblue;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hd">排序与缩放</div>
+    <div class="bd">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div>
+      <div class="child" style="flex-grow: 0;">8</div>
+      <div class="child">9</div>
+      <div class="child">10</div>
+      <div class="child">11</div>
+      <div class="child">12</div>
+      <div class="child">13</div>
+      <div class="child">14</div>
+      <div class="child">15</div>
+      <div class="child" style="order: 1;">16</div>
+      <div class="child">17</div>
+      <div class="child">18</div>
+      <div class="child">19</div>
+      <div class="child">20</div>
+      <div class="child">21</div>
+      <div class="child">22</div>
+      <div class="child">23</div>
+      <div class="child">24</div>
+      <div class="child" style="flex-shrink: 2;">25</div>
+      <div class="child">26</div>
+      <div class="child">27</div>
+      <div class="child">28</div>
+      <div class="child">29</div>
+      <div class="child">30</div>
+    </div>
+  </div>
+  
+</body>
+</html>

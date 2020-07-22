@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 3.使用组件 -->
+    <my-cpn></my-cpn>
+    <my-cpn></my-cpn>
+    <my-cpn></my-cpn>
+    <mycpn2></mycpn2>
+  </div>
+  <my-cpn></my-cpn> 
+  <div id="app2">
+    <mycpn2></mycpn2>
+  </div>
+  <!-- 这个不行，必须在Vue的实例中使用 -->
+  <script src="vue.js"></script>
+  <script>
+
+    // 1.创建组件构造器
+    const cpnC = Vue.extend({
+      template:`
+      <div>
+        <h2>我是标题</h2>
+        <p>我是内容，哈哈哈</p>
+        <p>我是内容，哈哈哈</p>
+      </div>`
+    });
+    const cpnC2 = Vue.extend({
+      template:`
+      <div style="color: red;">
+        <h2>我是app2局部组件</h2>
+        <p>我是内容，哈哈哈</p>
+        <p>我是内容，哈哈哈</p>
+      </div>`
+    })
+    // 2.注册组件
+    Vue.component('my-cpn',cpnC);
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+
+      }
+    })
+    const app2 = new Vue({
+      el: '#app2',
+      data: {
+
+      },
+      // cpnC2是局部组件
+      components:{
+        // mycpn2是注册组件的标签名
+        'mycpn2': cpnC2
+      }
+    });
+  </script>
+</body>
+</html>

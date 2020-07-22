@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .box{
+      width: 300px;
+      height: 450px;
+      margin: 50px auto;
+      border: 1px black solid;
+      display: block;
+    }
+    .box>h1{
+      font-size: 20px;
+      line-height: 35px;
+      color: deeppink;
+      padding-left: 10px;
+    }
+    li{
+      list-style: none;
+      padding: 5px 10px;
+      border: 1px dashed #cccccc;
+    }
+    li>span{
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #cccccc;
+      text-align: center;
+      line-height: 20px;
+      margin: 0 10px;
+    }
+    li:nth-child(-n+3) span{
+      background-color: deeppink;
+    }
+    .show{
+      display: block;
+    }
+    .hide{
+      display: none;
+    }
+  </style>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    $(() => {
+      $('button').eq(1).click(() => {
+        $('.box').hide(1000);
+        
+      });
+      $('button').eq(0).click(() => {
+        $('.box').show(1000);
+      });
+      $('button').eq(2).click(() => {
+        $('.box').toggle(2000);
+      });
+      $('button').eq(3).click(() => {
+        $('.box').slideUp(1000);
+      });
+      $('button').eq(4).click(() => {
+        $('.box').slideDown(1000);
+      });
+      $('button').eq(5).click(() => {
+        $('.box').slideToggle(1000,() => {
+          console.log(this);
+          
+        });
+      });
+    })
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h1>电影排行榜</h1>
+    <ul>
+      <li><span>1</span>电影名称</li>
+      <li><span>2</span>电影名称</li>
+      <li><span>3</span>电影名称</li>
+      <li><span>4</span>电影名称</li>
+      <li><span>5</span>电影名称</li>
+    </ul>
+  </div>
+  <button>显示</button>
+  <button>隐藏</button>
+  <button>切换</button>
+  <button>向上收起</button>
+  <button>向下展开</button>
+  <button>展开收起切换</button>
+</body>
+</html>

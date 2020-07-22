@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+
+            box1.onmousedown = function(event){
+                var ol = event.pageX - box1.offsetLeft;
+                var ot = event.pageY - box1.offsetTop;
+                
+                document.onmousemove = function(event){
+                    var x = event.pageX - ol;
+                    var y = event.pageY - ot;
+
+                    box1.style.left = x + 'px';
+                    box1.style.top = y + 'px';
+                }
+                document.onmouseup = function(){
+                    // 取消onmousemove事件
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+    </div>
+</body>
+</html>

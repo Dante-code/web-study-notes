@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var checkedAllBtn = document.getElementById('checkedAllBtn');
+            
+            var checkedNotBtn = document.getElementById('checkedNotBtn');
+            
+            var checkedRevBtn = document.getElementById('checkedRevBtn');
+            
+            var sendBtn = document.getElementById('sendBtn');
+            
+            var items =document.getElementsByName('items');
+
+            var checkedAllBox = document.getElementById('checkedAllBox');
+
+            checkedAllBtn.onclick=function(){
+                for(var i=0;i<items.length;i++){
+                    // 通过多选框checked属性可以来获取或设置多选框的选中内容
+                    items[i].checked = true;
+                }
+
+                checkedAllBox.checked = true;
+            }
+
+            
+            checkedNotBtn.onclick = function(){
+                for(var i=0;i<items.length;i++){
+                    items[i].checked = false;
+                }
+                checkedAllBox.checked = false;
+            }
+            
+
+            checkedRevBtn.onclick = function(){
+                var res = true;
+                for(var i=0;i<items.length;i++){
+                    items[i].checked = !items[i].checked;
+                    res &= items[i].checked ;
+                }
+               checkedAllBox.checked = res;
+            }
+
+            // 提交按钮，点击按钮之后，将所有选中的多选框的value属性值弹出
+            
+            sendBtn.onclick = function(){
+               var flag = 1;
+                for(var i=0;i<items.length;i++){
+                    if(items[i].checked){
+                        alert(items[i].value);
+                        flag = 0; 
+                    }
+                }
+                if(flag){
+                    alert('无');
+                }
+            }
+
+            checkedAllBox.onclick = function(){
+                for(var i=0;i<items.length;i++){
+                    items[i].checked = this.checked;
+                }
+            }
+
+            for(var i=0;i<items.length;i++){
+                items[i].onclick = function look (){
+                    var flag = 1;
+                    for(var j=0;j<items.length;j++){
+                        
+                        if(!items[j].checked){
+                            checkedAllBox.checked = false;
+                            flag = 0;
+                            break;
+                        }
+                    }
+                    if(flag){
+                        checkedAllBox.checked = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        你爱好的运动是？<input type="checkbox" name="" id="checkedAllBox"> 全选/全不选
+        <br>
+        <input type="checkbox" name="items" value="足球"> 足球
+        <input type="checkbox" name="items" value="篮球"> 篮球
+        <input type="checkbox" name="items" value="羽毛球"> 羽毛球
+        <input type="checkbox" name="items" value="乒乓球"> 乒乓球
+        <br>
+        <input type="button" value="全选" id="checkedAllBtn">
+        <input type="button" value="全不选" id="checkedNotBtn">
+        <input type="button" value="反选" id="checkedRevBtn">
+        <input type="button" value="提交" id="sendBtn">
+    </form>
+</body>
+</html>

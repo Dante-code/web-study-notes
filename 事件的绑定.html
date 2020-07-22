@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button id="btn">点我以下</button>
+    
+    <script type="text/javascript">
+        /* 
+            addEventListener()
+            通过这个方法也可以为元素绑定响应函数
+            参数：
+                1.事件的字符串，不加on
+                2.回调函数，当事件触发时该函数会被调用
+                3.是否在捕获阶段触发事件，需要一个布尔值，一般都传false
+    
+            使用addEventListener()可以同时为一个元素的相同事件同时绑定多个响应函数，这样当事件被触发时，响应函数将会按照函数绑定顺序执行
+            不过IE8以下不支持这个
+         */
+        var btn = document.getElementById('btn');
+        // btn.addEventListener("click",function(){
+        //     alert('1');
+        // },false);
+        // btn.addEventListener('click',function(){
+        //     alert('2');
+        // },false);
+        // btn.addEventListener('click',function(){
+        //     alert('3');
+        // },false);
+        
+        bind(btn,'click',function(){
+            alert('1'+this.innerHTML);
+        });
+        bind(btn,'click',function(){
+            alert('2'+this.innerHTML);
+        });
+        bind(btn,'click',function(){
+            alert('3'+this.innerHTML);
+        });
+        /* 
+            attachEvent()
+            在IE8中可以使用attachEvent()来绑定事件
+            参数:
+                1.事件的字符串，要on
+                2.回调函数
+    
+            这个是后绑定先执行
+         */ 
+        /* 
+        定义一个吧函数，用来指定元素绑定响应函数
+
+        addEventListener()中的this是绑定事件的对象
+        attachEvent()中的this. 是window
+        需要统一两个方法的this
+         */
+        function bind (obj,eventStr, callback){
+
+            if(obj.addEventListener){
+                obj.addEventListener(eventStr,callback,false);
+            }
+            else{
+                // IE8以下浏览器
+                obj.attachEvent('on'+eventStr, function(){
+                   callback.call(obj); 
+                });
+            }
+
+        }
+        </script>
+</body>
+</html>

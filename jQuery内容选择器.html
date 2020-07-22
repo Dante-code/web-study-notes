@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #bbffaa;
+      margin-bottom: 20px;
+    }
+  </style>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    $(() => {
+      //:empty 作用找到既没有文本内容有没有子元素的指定元素
+      let div1 = $('div:empty');
+      // console.log(div1);
+      //:parent 找到有文本内容或子元素的指定元素
+      let div2 = $('div:parent');
+      // console.log(div2);
+
+      //:contains(text)作用：找到包含指定文本内容的指定元素
+      let div3 = $('div:contains("我是div")');
+      // console.log(div3);
+
+      //:has(selector)作用找到包含指定子元素的指定元素----class,id,tag
+      let div4 = $('div:has(".v")');
+      console.log(div4);
+    })
+  </script>
+</head>
+<body>
+  <div></div>
+  <div>我是div</div>
+  <div>我是div1234</div>
+  <div><span class="v"></span></div>
+  <div><p class="v"></p></div>
+</body>
+</html>

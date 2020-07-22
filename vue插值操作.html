@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">
+        <h1>{{message + " " + name}}</h1>
+        <h2>{{message}} {{name}}</h2>
+        <h3>{{num*10}}</h3>
+    </div>
+<!-- mustache语法中可以直接写变量,也可以写表达式-->
+
+    <script src="vue.js"></script>
+    <script>
+        let box1 = new Vue({
+            el: '#box1',
+            data: {
+                message: 'hello',
+                name: "jack",
+                num:30
+            }
+        })
+    </script>
+</body>
+</html>

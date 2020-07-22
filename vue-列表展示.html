@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">
+        <ul>
+            <li v-for="item in games">{{item}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const box1 = new Vue({
+            el:'#box1',
+            data:{
+                games:['赛尔号','摩尔庄园','奥比岛','森林冰火人']
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    // $(); 就代表调用jQuery的核心函数
+    //1.接受一个函数
+    $(function(){
+      // alert('接受一个函数');
+      //2.接受一个字符串
+      //返回一个jQuery对象，对象中保存了找到的DOM元素
+      //2.1接受一个字符串选择器
+       var box1 = $('.box1');
+       var box2 = $('#box2');
+      //  console.log(box1,box2);
+
+       //2.2接受一个字符串代码片段
+       var p = $('<p>hahaha</p>');
+      //  console.log(p);
+       box1.append(p);
+
+       //3接受一个DOM元素
+       var span = document.getElementsByTagName('span')[0];
+       var $span = $(span);
+       console.log(span);
+       console.log($span);
+       
+       
+    });
+
+    
+
+  </script>
+</head>
+<body>
+  
+  <div class="box1"></div>
+  <div id="box2">
+    <span>i am a span</span>
+  </div>
+</body>
+</html>

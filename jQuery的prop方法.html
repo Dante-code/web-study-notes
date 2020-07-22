@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="http://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>  
+    $(() => {
+      /**
+       * 1.prop 用法和attr一样
+       * 2.removeProp 用法和removeAttr一样
+       * 
+       * 官方推荐操作属性节点时，具有true和false两个属性的属性节点，如checked,selected或者disabled使用prop(),其他使用attr()
+      */
+     console.log($('input').attr('checked'));
+     console.log($('input').prop('checked'));
+     
+     
+    })
+    
+  </script>
+</head>
+<body>
+  <!-- <input type="checkbox" checked> -->
+  <input type="checkbox">
+</body>
+</html>

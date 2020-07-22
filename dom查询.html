@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box1{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        .part1{
+            border: 1px black solid;
+            width: 400px;
+            float: left;
+            padding: 20px 0 20px 10px ;
+        }
+        ul li{
+            padding: 0 3px;
+            float: left;
+            background-color: #bbffaa;
+            text-align: center;
+            margin: 10px 5px;
+            font-size: 14px;
+            border: 1px black solid;
+            /* clear: both; */
+        }
+        .game{
+            float: left;
+            clear: both;
+        }
+        .phone{
+            float: left;
+            clear: both;
+        }
+        li:nth-child(1){
+            clear: both;
+        }
+        button{
+            width: 350px;
+            display: block;
+            /* float: right; */
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+        .part2{
+            margin-left: 10px;
+            /* border: black 1px solid; */
+            width: 360px;
+            float: right;
+        }
+        .part2::after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    </style>
+
+    <script type="text/javascript">
+    // 减少重复性代码
+    function myClick(id,fun){
+        var btn = document.getElementById(id);
+        btn.onclick = fun;
+    }
+    window.onload = function(){
+        
+
+
+        // 查找#bj结点
+        // 为id为btn01的按钮绑定一个单机响应函数
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick = function(){
+            var bj = document.getElementById('bj');
+            // innerHTML    通过这个属性可以获取元素内部的html代码
+            alert(bj.innerHTML);
+        }
+
+        // 查找所有的li结点
+        // 为id为btn02的按钮绑定一个单机响应函数
+        var btn02 = document.getElementById('btn02');
+        btn02.onclick = function(){
+            
+            // document.getElementsByTagName可以根据标签名获取一组元素结点对象
+            // 这个方法可以返回一个类数组对象，所有的查询到的元素都会封装到对象中
+            var lis = document.getElementsByTagName('li');
+            // alert(lis); 
+            for(var i=0;i<lis.length;i++){
+                alert(lis[i].innerHTML);
+            }
+        }
+
+        // 查找name = gender的所有结点
+        var btn03 = document.getElementById('btn03');
+        btn03.onclick = function(){
+            var inputs = document.getElementsByName('gender');
+            // alert(inputs);
+            for(var i=0;i<inputs.length;i++){
+                // innerHTML用于获取元素内部的html代码的
+                // 对于自结束标签没有意义
+
+                // 可以直接读取元素的属性名
+
+                // 但是不能直接读取class，必须写className才能读取
+                alert(inputs[i].value);
+            }
+
+
+        }
+
+        // 查找#city下结点
+        var btn04 = document.getElementById('btn04');
+        btn04.onclick = function(){
+            // getElementsByTagName返回当前节点的指定标签名后代节点
+            var city = document.getElementById('city');
+            // 查找#city下的所有li结点
+            var lis = city.getElementsByTagName('li');
+            // alert(lis);
+
+            for(var i=0;i<lis.length;i++){
+                alert(lis[i].innerHTML);
+            }
+        }
+
+        // 返回#city的所有子结点
+        var btn05 = document.getElementById('btn05');
+        btn05.onclick = function(){
+            var city = document.getElementById('city');
+            /*
+            childNodes属性会获取包括文本节点在内的所有节点
+            根据DOM标签标签间空白也会当成文本节点
+            */
+            var cns = city.childNodes;
+            alert(cns.length);//注意:IE8以下的浏览器中会返回4个子元素而其他的浏览器是9个
+            // alert(cns);
+            // for(var i=0;i<cns.length;i++){
+            //     alert(cns[i]);
+            // }
+
+            // 然而children属性可以获取当前元素的所有子元素
+            var cns2 = city.children;
+            alert(cns2.length);
+        }
+
+
+        // 返回#phone的第一个子结点
+        var btn06 = document.getElementById('btn06');
+        btn06.onclick = function(){
+            var phone = document.getElementById('phone');
+            var fir = phone.firstChild;
+            // firstChild可以获取到当前元素的第一个子节点（包括空白文本节点）
+            // lastChild同理
+            
+            alert('phone.firstChild = phone.childNodes[0]?   '+(fir === phone.childNodes[0]));
+
+            // firstElementChild获取当前元素的第一个子元素
+            /*
+            firstElementChild不支持IE8以下的浏览器，如果需要兼容他们就尽量不要使用
+            */
+        }
+
+        // 返回#bj的父结点
+        myClick('btn07',function(){
+            var bj = document.getElementById('bj');
+            var pn = bj.parentNode;
+            alert(pn);
+            // alert(pn.innerHTML);
+            /*
+            innerText
+            该属性可以获取到元素内部的文本内容
+            它和innerHTML类似，不同的是它会自动将HTML去掉
+            */
+            alert(pn.innerText);
+        });
+
+        // 返回#android的前一个兄弟结点
+        myClick('btn08',function(){
+            var Android = document.getElementById('Android');
+            var ps = Android.previousSibling;
+            // previousSibling也会获得空白的文本
+            // nextSibling同理
+            alert(ps);
+            var pe = Android.previousElementSibling;
+            alert(pe);
+            // 获取前一个兄弟元素，但是IE8不支持
+        });
+
+
+        // 设置username的value属性值
+        myClick('btn09',function(){
+            var um = document.getElementById('username');
+            alert(um.value);
+        });
+
+        // 设置username的value属性值
+        myClick('btn10',function(){
+            var um = document.getElementById('username');
+            um.value = 'hello';
+        });
+
+        // 返回#bj的文本值
+        myClick('btn11',function(){
+            var bj = document.getElementById('bj');
+            // alert(bj.innerHTML);
+            // alert(bj.innerText);
+
+            // 获取bj中的文本节点
+            var fc = bj.firstChild;
+            alert(fc.nodeValue+" "+fc);
+        });
+    };
+    
+    
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div class="part1">
+            <div>你喜欢哪座城市？</div>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+
+            <div class="game">你喜欢哪款单机游戏？</div>
+            <ul>
+                <li id="hj">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+
+            <div class="phone">你手机的操作系统是？</div>
+            <ul id="phone">
+                <li id="ios">IOS</li>
+                <li id="Android">Android</li>
+                <li>windows phone</li>
+            </ul>
+        </div>
+        <div class="part2">
+            <button type="button" id="btn01">查找#bj结点</button>
+            <button type="button" id="btn02">查找所有li结点</button>
+            <button type="button" id="btn03">查找name = gender的所有结点</button>
+            <button type="button" id="btn04">查找#city下结点</button>
+            <button type="button" id="btn05">返回#city的所有子结点</button>
+            <button type="button" id="btn06">返回#phone的第一个子结点</button>
+            <button type="button" id="btn07">返回#bj的父结点</button>
+            <button type="button" id="btn08">返回#android的前一个兄弟结点</button>
+            <button type="button" id="btn09">返回username的value属性值</button>
+            <button type="button" id="btn10">设置username的value属性值</button>
+            <button type="button" id="btn11">返回#bj的文本值</button>
+        </div>
+        <div class="part3">
+            gender:
+            <input type="radio" name="gender" value="male" class="hello,how are you"/>
+            Male 
+            <input type="radio" name="gender" value="female" class="i'm fine"/>
+            Female
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde"/>
+        </div>
+    </div>
+
+</body>
+</html>

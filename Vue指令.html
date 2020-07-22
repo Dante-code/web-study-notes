@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    [v-cloak]{
+      display: none;
+      /* 
+      v-cloak和css一块使用避免来不及渲染导致的闪烁和源代码暴露
+       */
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak v-bind:style="baseStyle">
+    <p>{{message}}</p>
+    <!-- 
+      v-text用于渲染普通文本，无论何时，绑定的数据对象上message属性发生了改变，插值处的内容都会更新。
+      这个和mustache语法一样
+     -->
+    <p v-text="message +' '+message"></p>
+     <!-- 
+       v-html可以解析html标签
+      -->
+    <p v-html="a"></p>
+    <!-- 
+      v-once第一次刷新页面后内容就不变了
+     -->
+    <p v-once>{{message}}</p>
+    <!-- 
+      v-pre不解析mushache
+    -->
+    <p v-pre>{{message}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    setTimeout(()=>{
+      const app = new Vue({
+        el: '#app',
+        data:{
+          message: 'hello world',
+          a: '<a href="https://www.baidu.com/">百度一下</a>',
+          baseStyle:{
+            backgroundColor: '#bfa',
+            width: '400px',
+            height: '400px'
+          }
+        }
+      })
+    },2000);
+    
+  </script>
+</body>
+</html>

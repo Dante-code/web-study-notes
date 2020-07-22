@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 事件就是用户和浏览器的交互行为 -->
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>事件</title>
+        <script type="text/javascript">
+        // 如果想把事件写在上面，注意不能直接写，浏览器加载顺序是从上至。代码执行时，button还没有加载出来
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+            btn.onclick = function(){
+                alert('^.^');
+            };
+        };
+             
+        </script>
+    </head>
+    <body>
+        <!-- <button id="btn" onmousemove="alert('你好');">你好啊</button> -->
+        <button id="btn">你好啊</button>
+        <!-- <script type="text/javascript">
+            var btn = document.getElementById('btn');
+            // 绑定一个单机事件-----单机响应函数
+            btn.onclick = function(){
+                alert('^.^');
+            }
+
+        </script> -->
+    </body>
+</html>

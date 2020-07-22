@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var ul = document.getElementById('u1');
+            var btn = document.getElementById('btn01');
+            /**
+            事件的委派
+                将事件统一绑定给元素的共同的祖先元素，这样后代元素上的事件触发时，会一直冒泡到祖先元素，从而通过祖先元素的响应函数来处理事件
+            事件委派是利用了冒泡，通过委派可以减少绑定的次数，提高程序的性能
+            */
+            ul.onclick = function(event){
+                event = event || window.event;
+                /**
+                target
+                    -event中的target表示的触发事件的对象
+                */
+
+                // 如果触发的事件是期望的元素，则执行否则就不执行
+                if(event.target.className == 'link'){
+                    alert('我是a的单击响应函数');
+                }
+            }
+            btn.onclick = function(){
+                var li = document.createElement('li');
+                var num = ul.childElementCount;
+                li.innerHTML = '<li><a href="javascript:;" class="link">超链接'+num+'</a></li>'
+                ul.appendChild(li);
+                // alert(li.innerHTML);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">添加超链接</button>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">超链接一</a></li>
+        <li><a href="javascript:;" class="link">超链接二</a></li>
+        <li><a href="javascript:;" class="link">超链接三</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <cpn>
+      <!-- 调用cpn数据需要template模板 -->
+      <template slot-scope="slot">
+        <span v-for="item in slot.data">{{item}}</span>
+      </template>
+      
+    </cpn>
+    <cpn>
+      <!-- 调用cpn数据需要template模板 -->
+      <template slot-scope="slot">
+        <span>{{slot.data.join(' * ')}}</span>
+      </template>
+      
+    </cpn>
+  </div>
+
+
+  <template id="cpn">
+    <div>
+      <slot :data="languages">
+        <ul>
+          <li v-for="item in languages">{{item}}</li>
+        </ul>
+      </slot>
+    </div>
+  </template>
+
+
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data:{
+
+      },
+      components:{
+        cpn:{
+          template:'#cpn',
+          data(){
+            return{
+              languages:['JavaScript','Python','C++','C#','GO','Java']
+            }
+            
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
