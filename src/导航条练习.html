@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>导航条练习</title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .nav{
+                list-style: none;
+                background-color: #6495eb;
+                /* height: 10px; */
+                width: 1000px;
+                /* 
+                    在IE6中，如果为元素指定了一个宽度，则会默认开启hasLayout
+                */
+                margin: 50px auto;
+                zoom: 1;
+                overflow: hidden;
+            }
+            .nav>li{
+                float: left;
+                margin: 0 auto ;
+                width: 25%;
+                text-align: center;
+                padding: 3px 0;
+            }
+            .nav li a{
+                font-weight: bold;
+                color: white;
+                display: block;
+                width: 100%;
+                text-decoration: none;
+                /* width: 100%; */
+                /* text-align: center; */
+                
+            }
+            /* 
+                设置a的鼠标移入效果
+                给li设置背景色可以消除边缘padding的蓝色
+             */
+            .nav li:hover{
+                background-color: #cc0000;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">联系</a></li>
+            <li><a href="#">关于</a></li>
+        </ul>
+        <div class="box"></div>
+    </body>
+</html>

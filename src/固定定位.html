@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>相对定位</title>
+        <style type="text/css">
+        body{
+            height: 5000px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            /* margin-bottom: 200px; */
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color:red;
+            position: fixed;
+            left: 0;
+            top: 0;
+            /* 
+            当元素的position属性设置fixed时，则开启了元素的固定定位
+            固定定位也是一种绝对定位，它的大部分特点都和绝对定位一样
+
+            不同的是：
+                固定定位永远都会相对于浏览器窗口进行定位
+                固定定位会固定在浏览器窗口的某个位置，不会随滚动条滚动
+
+            IE6不支持固定定位
+             */
+        }
+        .box4{
+            width: 300px;
+            height: 300px;
+            background-color:orange;
+            position: relative;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color:yellow;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box4">
+            <div class="box2"></div>
+        </div>
+        
+        <div class="box3"></div>
+        <span class="s1">我是一个span</span>
+    </body>
+</html>

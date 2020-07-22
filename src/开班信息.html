@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>开班信息</title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            /* 统一一下页面的字体 */
+            body{
+                font: 12px "宋体" ;
+
+            }
+            /* 设置outer大小 */
+            .outer{
+                width: 300px;
+                /*height: 473px;*/
+                /*background-color: #bbffaa;*/
+                margin: 50px auto;
+            }
+            .title{
+                background-color: #f5f5f5;
+                border-top: 2px solid green;
+                /* 设置盒子的高度 */
+                height: 36px;
+                /* 设置title的行高 */
+                line-height: 36px;
+                padding-left: 16px;
+                padding-right: 22px;
+            }
+            /* 设置title里的超链接 */
+            .title a{
+                /* display: block; */
+                color: red;
+                float: right;
+            }
+            .title h3{
+                font: 16px/36px "微软雅黑";
+            }
+            .content{
+                border: 1px solid #deddd9;
+                padding: 0 28px 0 20px;
+            }
+            .content a{
+                color: black;
+                text-decoration: none;
+            }
+            .content .redder{
+                color: red;
+                font-weight: bolder;
+            }
+            .content .right{
+                float: right;
+            }
+            ul{
+                /*margin-top: 14px;*/
+                list-style: none;
+                border-bottom: #deddd9 dashed 1px;
+            }
+            #last{
+                border-bottom: none;
+            }
+            .content h4{
+                margin-top: 14px;
+                margin-bottom: 16px;
+            }
+            li{
+                margin-bottom: 13px;
+            }
+            .content a:hover{
+                text-decoration: underline;
+                font-weight: bolder;
+            }
+            .content a span:hover{
+                text-decoration: underline;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 创建一个外层div痛呢整个内容 -->
+        <div class="outer">
+            <div class="title">
+                <a href="#">16年面授开班计划</a>
+                <h3>近期开班</h3>
+            </div>
+            <div class="content">
+                <h4><a href="#">Java EE+云计算-全程就业班</a> </h4>
+                <ul>
+                    <li>
+                        <a href="#">开班时间：<span class="redder">2016-04-27</span></a>
+                        <a class="right" href="#"><span class="redder">预约报名</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span class="redder">2016-042-7</span></a>
+                        <a class="right" href="#"><span class="redder">无座，名额爆满</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span>2016-03-15</span></a>
+                        <a class="right" href="#"><span>开班盛况</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span>2016-02-25</span></a>
+                        <a class="right" href="#"><span>开班盛况</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span>2015-12-26</span></a>
+                        <a class="right" href="#"><span>开班盛况</span></a>
+                    </li>
+                </ul>
+
+                <h4><a href="#">Android+人工智能-全程就业班</a> </h4>
+                <ul>
+                    <li>
+                        <a href="#">开班时间：<span class="redder">2016-04-10</span></a>
+                        <a class="right" href="#"><span class="redder">预约报名</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span class="redder">2016-03-17</span></a>
+                        <a class="right" href="#"><span class="redder">无座，名额爆满</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span>2016-02-20</span></a>
+                        <a class="right" href="#"><span>开班盛况</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span>2016-12-23</span></a>
+                        <a class="right" href="#"><span>开班盛况</span></a>
+                    </li>
+                </ul>
+
+                <h4><a href="#">前端+HTML5-全程就业班</a> </h4>
+                <ul id="last">
+                    <li>
+                        <a href="#">开班时间：<span class="redder">2016-05-10</span></a>
+                        <a class="right" href="#"><span class="redder">预约报名</span></a>
+                    </li>
+                    <li>
+                        <a href="#">开班时间：<span>2016-03-16</span></a>
+                        <a class="right" href="#"><span>开班盛况</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

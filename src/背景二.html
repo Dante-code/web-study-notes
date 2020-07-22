@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <style type="text/css">
+        body{
+            /* 
+                background-attachment用来设置背景图片是否随页面一起滚动
+                    可选值：
+                        scorll默认值，背景图片随窗口滚动
+                        fixed背景图片会固定在某一位置，不随页面滚动
+
+                当背景图片
+             */
+             height: 5000px;
+            background-image: url(1.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        .box1{
+            width: 900px;
+            height: 900px;
+            background-color: #bfa;
+            margin: 50px auto;
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+              /* 背景图片默认是贴着元素的左上角显示
+              通过background-position可以调整图片在元素中的位置
+              可选值:
+                    该属性可以使用 top  right left  bottom  center              
+                    left top 左上
+                    right top 右上
+                
+                    也可以是直接指定偏移量：
+                        第一个值是水平偏移量
+                            -正值右移，负值左移
+                        第二个是垂直偏移量
+                            -正值下移，负值上移
+              */
+            background-position: 200px 200px;
+            background-attachment: fixed;
+        }
+        /* .box2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color:green;
+        }
+        .box4{
+            width: 400px;
+            height: 400px;
+            background-color:blue;
+            position: relative;
+        } */
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box4">
+            <div class="box2"></div>
+        </div>
+        
+        <div class="box3"></div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>浮动</title>
+        <style type="text/css">
+        *{
+            margin:0;
+            padding: 0;
+
+        }
+        /* 设置头部 */
+        .header{
+            /* 设置宽度 */
+            width: 1000px;
+            /* 设置高度 */
+            height: 100px;
+            background-color: yellowgreen;
+            /* 居中 */
+            margin: auto;
+        }
+        /*设置一个content  */
+        .content{
+            /* 设置宽度 */
+            width: 1000px;
+            height: 400px;
+            background-color: orange;
+            margin: 10px auto;
+
+        }
+        .footer{
+            /* 设置宽度 */
+            width: 1000px;
+            height: 100px;
+            background-color: gray;
+            margin: auto;
+
+        }
+        .left{
+            width: 200px;
+            height: 400px;
+            background-color: skyblue;
+            float: left;
+        }
+        .center{
+            width: 580px;
+            height: 400px;
+            background-color: tan;
+            float: left;
+            margin: auto 10px;
+
+        }
+        .up{
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            float: left;
+            margin: 10px 200px;
+        }
+        .down{
+            width: 400px;
+            height: 200px;
+            background-color: yellow;
+            float: left;
+            margin: 50px 100px;
+        }
+        .right{
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+            float: left;
+        }
+        </style>
+
+    </head>
+    <body>
+        <!-- 设置头部 -->
+        <div class="header"></div>
+        <!-- 主要内容div -->
+        <div class="content">
+            <div class="left"></div>
+            <div class="center">
+                <div class="up"></div>
+                <div class="down"></div>
+            </div>
+            <diuv class="right"></diuv>
+        </div>
+        <!-- 底部信息div -->
+        <div class="footer"></div>
+    </body>
+</html>

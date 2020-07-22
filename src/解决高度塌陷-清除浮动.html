@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>untitled</title>
+        <style type="text/css">
+        .dad{
+            border: 10px black solid;
+            /* display: inline-block; */
+            /* height: 100px; */
+            /* overflow: hidden; */
+            /* zoom: 1; */
+        } 
+        .son1{
+            
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 设置box1向左浮动 */
+            float: left;
+
+        }
+        .son2{ 
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+             float: right; 
+             
+        }
+        .son3{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            float: left;
+        }
+        /* .clear{
+            clear: both;
+        } */
+        /* 
+            解决高度塌陷方案二：
+                可以直接在高度塌陷的父元素的最后添加一个空白的div
+                由于这个div并没有浮动，所以它是可以撑开父元素的高度
+                然后在对其进行清除浮动，这样可以通过这个空白的div来撑开父元素的高度
+                基本没有副作用
+
+                使用这种方式虽然可以解决问题，但是会在页面中添加多余的结构
+         */
+
+        /* 解决高度塌陷方案三： 
+          通过after伪类，选中dad的后边 
+        */
+         /* 
+            可以通过after伪类向元素最后添加一个空白元素，然后对其清除浮动
+            这样做和添加一个div的原理一样，可以达到一个相同的效果
+            而且不会在页面中添加多余的div，这是我们最推荐使用的方式，几乎没有副作用
+          */
+        .dad:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* 
+        在IE6中不支持after伪类，所以在IE: 6;中还需要使用hasLayout来处理
+         */
+        .dad{
+            zoom: 1;
+        }
+        .c1{
+            width:500px;
+            height: 100px;
+            background-color: #bbffaa;
+        } 
+        </style>
+    </head>
+    <body>
+        <div class="dad">
+            <div class="son1"></div>
+            
+            <div class="son2"></div>
+            <div class="son3"></div>
+            <!-- <div class="clear"></div> -->
+
+        </div>
+        <div class="c1"></div>
+    </body>
+</html>

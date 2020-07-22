@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>内边距</title>
+        <style type="text/css">
+        /* 
+        浏览器为了在页面中没有样式时，也可以有一个比较好的显示小效果，所以为很多的元素都设置了一些默认的margin和padding
+        而它的这些默认样式，正常情况下我们是不需要使用的
+
+        所以我们往往在编译样式之前需要将浏览器中的默认的margin和padding统统去掉
+         */
+         *{
+             margin:0;
+             padding: 0;
+         }
+
+            .box1{
+                width: 500px;
+                height: 500px;
+                background-color: #bbffaa;
+                border: 10px red solid
+
+            }
+            
+        </style>
+    </head>
+    <body>
+       <div class="box1"></div>
+       <div class="box2"></div>
+    </body>
+</html>

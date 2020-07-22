@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>文档流</title>
+        <style type="text/css">
+        .son1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .son2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .son3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        </style>
+
+    </head>
+    <body>
+        <!-- 
+            文档流
+                文档流处在网页的最底层，它表示的是一个页面中的位置，我们所创建的元素都默认处在文档流中
+
+            元素在文档流中的特点
+                块元素
+                    1.块元素在文档流中独占一行，块元素会自上向下
+                    2.块元素在文档流中默认宽度是父元素的100%
+                    3.块元素在文档流中的高度默认被内容撑开
+                内联元素
+                    1.内联元素在文档流中只占自身大小，会默认从左向右排列，如果一行中不足以容纳所有的内联元素，则会换到下一行
+                        继续自左向右
+                    2.在文档流中，内联元素的宽和高默认被内容撑开
+         -->
+        <div class="dad">
+            <!-- 
+                当元素的高度和宽度的值为auto时，此时指定的内边距不会影响可见框的大小，而是会自动修改宽度，以适应内边距
+             -->
+            <div style="background-color: #bfa;padding: 30px;"></div>
+            <div class="son1"></div>
+            <div class="son2"></div>
+            <div class="son3"></div>
+            <span>i am a span </span>
+            <span>i am a span </span>
+            <span>i am a span </span>
+            <span>i am a span </span>
+            <span>i am a span </span>
+            <span>i am a span </span>
+            <span>i am a span </span>
+            <span>i am a span </span>
+
+        </div>
+    </body>
+</html>

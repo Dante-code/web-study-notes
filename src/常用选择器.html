@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+            元素选择器
+            作用：通过元素选择器可以选择页面中的所有指定元素
+            语法：标签名{}
+        */
+        /*p{*/
+        /*    color: blue;*/
+        /*}*/
+        /*
+           id 选择器
+           通过元素的id属性值选中唯一的元素
+       */
+        #p1{
+            font-size: 20px;
+        }
+        /*
+            类选择器
+            通过元素的class属性值选中一组元素
+            语法：
+            .class属性值{}
+            我们可以为元素设置class属性，class属性和id属性类似，只不过class属性可以重复，拥有相同class属性值的元素称为一组元素
+            可以为一个元素设置多个class属性值，多个值之间使用空格隔开
+        */
+        .p2{
+            color: cyan;
+        }
+        .nihao{
+            font-size: 30px;
+        }
+        /*
+            选择器分组
+            通过选择器分组可以同时选中多个选择器，对应的元素
+            语法：选择器1，选择器2，选择器N{}
+         */
+        #p1,.p2,h1{
+            background-color: darkslategrey;
+        }
+        /*统配选择器
+        可以来选中页面中的所有元素
+        语法：*{}
+        */
+        /*复合选择器（交集选择器）
+        作用：可以选中同时满足多个选择器的元素
+        语法： 选择器1选择器2选择器N{}
+        */
+        p.p2.nihao.hello{
+            background-color: coral;
+            color: white;
+        }
+        h1{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    悯农
+</h1>
+    <p>锄禾日当午</p>
+    <p id="p1">锄禾日当午</p>
+    <p class="p2 hello nihao">锄禾日当午</p>
+    <p class="p2">锄禾日当午</p>
+    <p class="p2 nihao">锄禾日当午</p>
+    <span class="p2">锄禾日当午</span>
+    <p>锄禾日当午</p>
+</body>
+</html>
